@@ -1,0 +1,100 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+
+/* O asterisco altera as regras para TODOS os elementos da página */
+* {
+    margin: 0;          /* Remove as margens padrão do navegador */
+    padding: 0;         /* Remove os espaçamentos internos padrão */
+    box-sizing: border-box; /* Garante que padding e bordas não quebrem o tamanho dos elementos */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte do texto */
+    line-height: 1.6;   /* Define o espaçamento entre as linhas do texto */
+    background-color: #f4f4f9; /* Define a cor de fundo da página (cinza claro) */
+    color: #333333;     /* Define a cor padrão do texto (grafite escuro) */
+}
+
+/* --- ESTILIZAÇÃO POR BLOCOS --- */
+
+/* Cabeçalho */
+header {
+    background-color: #2c3e50; /* Cor de fundo (azul escuro) */
+    color: white;              /* Cor do texto */
+    padding: 2rem;             /* Espaçamento interno (para dar respiro ao texto) */
+    text-align: center;        /* Centraliza o texto */
+}
+
+/* Menu de Navegação */
+nav {
+    background-color: #34495e; /* Cor de fundo um pouco mais clara que o header */
+    text-align: center;        /* Centraliza os links */
+}
+
+nav a {
+    display: inline-block;     /* Permite aplicar margens e paddings corretamente nos links */
+    color: white;              /* Cor do texto do link */
+    padding: 12px 20px;        /* Espaçamento vertical e horizontal nos links */
+    text-decoration: none;     /* Remove o sublinhado padrão dos links */
+    font-weight: bold;         /* Deixa o texto em negrito */
+}
+
+/* Efeito de passar o mouse nos links do menu */
+nav a:hover {
+    background-color: #1abc9c; /* Muda a cor de fundo para verde água ao passar o mouse */
+    transition: 0.3s;          /* Deixa a transição de cor mais suave */
+}
+
+/* --- LAYOUT DO CONTEÚDO (FLEXBOX) --- */
+
+/* Container que segura o conteúdo principal e a barra lateral */
+.container {
+    max-width: 1100px;  /* Largura máxima que o site pode atingir */
+    margin: 20px auto;  /* Afasta 20px do topo/rodapé e centraliza nas laterais (auto) */
+    padding: 0 20px;    /* Evita que o conteúdo cole na tela em celulares */
+    
+    /* Ativa o Flexbox para colocar a seção principal e a lateral lado a lado */
+    display: flex;
+    flex-wrap: wrap;    /* Se a tela for pequena (celular), joga a lateral para baixo */
+    gap: 20px;          /* Cria um espaço de 20px entre os blocos de conteúdo */
+}
+
+/* Bloco do Conteúdo Principal */
+.conteudo-principal {
+    flex: 3;            /* Ocupa 3 partes do espaço disponível */
+    background: white;  /* Fundo branco para destacar o texto */
+    padding: 20px;      /* Espaço interno */
+    border-radius: 8px; /* Arredonda as bordas do bloco */
+}
+
+.conteudo-principal h2, .conteudo-principal p {
+    margin-bottom: 15px; /* Cria um espaço abaixo dos títulos e parágrafos */
+}
+
+/* Bloco da Barra Lateral */
+.barra-lateral {
+    flex: 1;            /* Ocupa 1 parte do espaço (fica menor que o conteúdo principal) */
+    background: #eef2f5; /* Fundo cinza azulado */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.barra-lateral ul {
+    list-style: none;   /* Remove as bolinhas da lista */
+    margin-top: 10px;
+}
+
+.barra-lateral li a {
+    color: #2c3e50;
+    text-decoration: none;
+    display: block;     /* Faz o link ocupar a linha toda */
+    padding: 5px 0;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;   /* Garante que o rodapé fique bem afastado do conteúdo */
+}
